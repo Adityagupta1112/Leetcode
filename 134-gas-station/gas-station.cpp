@@ -4,36 +4,22 @@ public:
         int n=gas.size();
         int totalgas=0;
         int totalcost=0;
-        int maxDiff=INT_MIN;
-        int idx=-1;
         for(int i=0;i<n;i++){
             totalgas+=gas[i];
             totalcost+=cost[i];
-            int leftGas=gas[i]-cost[i];
-            if(leftGas>maxDiff){
-                maxDiff=leftGas;
-                idx=i;
-            }
         }
         if(totalcost>totalgas){
             return -1;
         }
-        int i=idx;
-        int currGas=maxDiff;
-        int j=i+1;
-        while(j<n && i!=j){
-            int left=gas[j]-cost[j];
-            currGas+=left;
+        int currGas=0;
+        int ans=0;
+        for(int i=0;i<n;i++){
+            currGas+=(gas[i]-cost[i]);
             if(currGas<0){
-                while(currGas<0){
-                    i=(i+1)%n;
-                    currGas=gas[i]-cost[i];
-                }
-                j=(i+1)%n;
-                continue;
+                currGas=0;
+                ans=i+1;
             }
-            j=(j+1)%n;
         }
-        return i;
+        return ans;
     }
 };
