@@ -2,6 +2,7 @@ class Solution {
 public:
     int removeCoveredIntervals(vector<vector<int>>& intervals) {
         set<pair<int,int>>s;
+        sort(intervals.begin(),intervals.end());
         int n=intervals.size(); 
         for(auto& interval:intervals){
             pair<int,int>p={interval[0],interval[1]};
