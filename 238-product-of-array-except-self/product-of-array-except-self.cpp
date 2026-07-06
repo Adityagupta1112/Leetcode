@@ -16,7 +16,7 @@ public:
             if(zero>1){
                 return result;
             }
-            if(zero==1){
+            else if(zero==1){
                 if(nums[i]==0){
                     result[i]=totalProduct;
                 }
