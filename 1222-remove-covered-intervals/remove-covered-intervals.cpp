@@ -1,20 +1,22 @@
 class Solution {
 public:
     int removeCoveredIntervals(vector<vector<int>>& intervals) {
-        set<pair<int,int>>s;
-        sort(intervals.begin(),intervals.end());
-        int n=intervals.size(); 
-        for(int i=0;i<n;i++){
-            pair<int,int>p={intervals[i][0],intervals[i][1]};
-            if(s.find(p)!=s.end()){
+        vector<vector<int>>result;
+        auto lambda=[](vector<int>&a,vector<int>&b){
+            if(a[0]==b[0]){
+                return a[1]>b[1];
+            }
+            return a[0]<b[0];
+        };
+        sort(intervals.begin(),intervals.end(),lambda);
+        result.push_back(intervals[0]);
+        int n=intervals.size();
+        for(int i=1;i<n;i++){
+            if(result[result.size()-1][0]<=intervals[i][0]  && result[result.size()-1][1]>=intervals[i][1]){
                 continue;
             }
-            for(int j=0;j<n;j++){
-                if(i!=j && (intervals[i][0]<=intervals[j][0] && intervals[i][1]>=intervals[j][1])){
-                    s.insert(make_pair(intervals[j][0],intervals[j][1]));
-                }
-            }
+            result.push_back(intervals[i]);
         }
-        return n-s.size();
+        return result.size();
     }
 };
