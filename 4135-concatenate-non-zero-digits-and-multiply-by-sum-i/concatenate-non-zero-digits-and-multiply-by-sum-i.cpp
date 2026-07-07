@@ -2,15 +2,15 @@ class Solution {
 public:
     long long sumAndMultiply(int n) {
         vector<int>arr;
-        while(n>99){
+        while(n>0){
             int rem=n%10;
             n=n/10;
             arr.push_back(rem);
         }
-        int rem=n%10;
-        n=n/10;
-        arr.push_back(rem);
-        arr.push_back(n);
+        // int rem=n%10;
+        // n=n/10;
+        // arr.push_back(rem);
+        // arr.push_back(n);
         reverse(arr.begin(),arr.end());
         long long x=0;
         long long sum=0;
