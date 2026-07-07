@@ -22,16 +22,16 @@ public:
                 if(leftmax<height[i]){
                     leftmax=height[i];
                     leftmaxIdx=i;
-                    helper(leftmaxIdx,rightmaxIdx);
                 }
+                helper(leftmaxIdx,rightmaxIdx);
                 i++;
             }
             else{
                 if(rightmax<height[j]){
                     rightmax=height[j];
                     rightmaxIdx=j;
-                    helper(leftmaxIdx,rightmaxIdx);
                 }
+                helper(leftmaxIdx,rightmaxIdx);
                 j--;
             }
         }
