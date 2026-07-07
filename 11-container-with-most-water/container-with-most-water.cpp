@@ -5,18 +5,15 @@ public:
         int i=0;
         int j=n-1;
         int ans=0;
-        int leftmax=0;
-        int rightmax=0;
         while(i<=j){
-            leftmax=max(leftmax,height[i]);
-            rightmax=max(rightmax,height[j]);
-            if(leftmax<rightmax){
-                ans=max(ans,leftmax*(j-i));
-                i++;
+            int length=min(height[i],height[j]);
+            int breath=j-i;
+            ans=max(ans,length*breath);
+            if(height[i]>height[j]){
+                j--;
             }
             else{
-                ans=max(ans,rightmax*(j-i));
-                j--;
+                i++;
             }
         }
         return ans;
