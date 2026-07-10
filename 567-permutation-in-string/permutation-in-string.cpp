@@ -2,7 +2,7 @@ class Solution {
 public:
     bool helper(string&s, unordered_map<char,int>&mp){
         
-        for(char ch:s){
+        for(char & ch:s){
             if(mp[ch]!=0){
                 return false;
             }
