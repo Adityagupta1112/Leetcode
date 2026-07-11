@@ -11,7 +11,6 @@ public:
                 flip--;
             }
             while(flip<0 ){
-                ans=max(ans,j-i);
                 if(nums[i]==0){
                     flip++;
                 }
