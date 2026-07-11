@@ -24,13 +24,14 @@ public:
         int count=0;
         
         for(int i=0;i<n;i++){
+            if(visited[i]){
+                continue;
+            }
             int node=0;
             int edge=0;
-            if(!visited[i]){
-                DFS(i,node,edge,visited);
-                if(node*(node-1)==edge){
-                    count++;
-                }
+            DFS(i,node,edge,visited);
+            if(node*(node-1)==edge){
+                count++;
             }
         }
         return count;
