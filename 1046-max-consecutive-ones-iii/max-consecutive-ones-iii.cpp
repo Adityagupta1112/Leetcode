@@ -10,7 +10,7 @@ public:
             if(nums[j]==0){
                 flip--;
             }
-            while(flip<0 && nums[j]==0){
+            while(flip<0 ){
                 ans=max(ans,j-i);
                 if(nums[i]==0){
                     flip++;
