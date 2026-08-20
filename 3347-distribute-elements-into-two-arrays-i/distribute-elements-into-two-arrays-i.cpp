@@ -5,9 +5,9 @@ public:
         vector<int>arr2;
         int n=nums.size();
         for(int i=0;i<n;i++){
-            if(i%2==0){
-                int s1=arr1.size();
-                int s2=arr2.size();
+            int s1=arr1.size();
+            int s2=arr2.size();
+            if(i%2==0){ 
                 if(s1==0){
                     arr1.push_back(nums[i]);
                 }
@@ -21,8 +21,6 @@ public:
                 }
             }
             else{
-                int s1=arr1.size();
-                int s2=arr2.size();
                 if(s2==0){
                     arr2.push_back(nums[i]);
                 }
