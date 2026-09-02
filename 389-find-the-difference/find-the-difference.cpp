@@ -14,7 +14,7 @@ public:
             mp[ch]--;
         }
         char ans;
-        for(auto it:mp){
+        for(auto &it:mp){
             if(it.second!=0){
                 ans= it.first;
                 break;
