@@ -10,8 +10,8 @@ public:
             }
             string right=s.substr(i+1);
             int count1=0;
-            for(char ch:right){
-                if(ch=='1'){
+            for(int j=i+1;j<n;j++){
+                if(s[j]=='1'){
                     count1++;
                 }
             }
