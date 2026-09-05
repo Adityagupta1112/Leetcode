@@ -22,7 +22,7 @@ public:
     }
     int minDifficulty(vector<int>& jobDifficulty, int d) {
         int n=jobDifficulty.size();
-        vector<vector<int>>dp(n+1,vector<int>(d+1,-1));
+        vector<vector<int>>dp(n,vector<int>(d+1,-1));
         if(d>n){
             return -1;
         }
