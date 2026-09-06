@@ -19,7 +19,9 @@ public:
         return dp[0][0];
     }
     int numDistinct(string s, string t) {
-        vector<vector<int>>dp(1000,vector<int>(1000,-1));
+        int n=s.size();
+        int m=t.size();
+        vector<vector<int>>dp(n,vector<int>(m,-1));
         return solve(s,t,0,0,dp);
     }
 };
