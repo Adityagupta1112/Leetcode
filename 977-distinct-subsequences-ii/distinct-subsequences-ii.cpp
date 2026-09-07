@@ -1,7 +1,7 @@
 class Solution {
 public:
     int MOD=1e9+7;
-    int solve(int n,vector<int>prev,vector<int>&dp){
+    int solve(int n,vector<int>&prev,vector<int>&dp){
         if(n==0){
             return 1;
         }
