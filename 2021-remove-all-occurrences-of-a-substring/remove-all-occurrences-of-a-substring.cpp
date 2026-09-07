@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool check(stack<char>&st,string part,int n){
+    bool check(stack<char>&st,string &part,int n){
         stack<char>temp=st;
         for(int i=n-1;i>=0;i--){
             if(temp.top()!=part[i]){
