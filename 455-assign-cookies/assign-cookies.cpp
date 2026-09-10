@@ -6,9 +6,9 @@ public:
 
         int n=g.size();
         int m=s.size();
-        if(n==0 || m==0){
-            return 0;
-        }
+        // if(n==0 || m==0){
+        //     return 0;
+        // }
         int count=0;
         int idx=m-1;
 
