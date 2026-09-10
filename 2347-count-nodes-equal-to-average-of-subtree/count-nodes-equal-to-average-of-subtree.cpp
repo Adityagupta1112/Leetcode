@@ -11,30 +11,30 @@
  */
 class Solution {
 public:
-    int sumSubtree(TreeNode*root){
+    pair<int,int>sumSubtree(TreeNode*root){
         if(root==NULL){
-            return 0;
+            return {0,0};
         }
-        int leftsum=sumSubtree(root->left);
-        int rightsum=sumSubtree(root->right);
-        int sum=root->val+leftsum+rightsum;
-        return sum;
+        pair<int,int> leftsum=sumSubtree(root->left);
+        pair<int,int> rightsum=sumSubtree(root->right);
+        int sum=root->val+leftsum.first+rightsum.first;
+        int node=1+leftsum.second+rightsum.second;
+        return {sum,node};
     }
-    int countNode(TreeNode*root){
-        if(root==NULL){
-            return 0;
-        }
-        int leftNode=countNode(root->left);
-        int rightNode=countNode(root->right);
-        return 1+leftNode+rightNode;
-    }
+    // int countNode(TreeNode*root){
+    //     if(root==NULL){
+    //         return 0;
+    //     }
+    //     int leftNode=countNode(root->left);
+    //     int rightNode=countNode(root->right);
+    //     return 1+leftNode+rightNode;
+    // }
     void helper(TreeNode*root,int &average_sum){
         if(root==NULL){
             return;
         }
-        int sum=sumSubtree(root);
-        int node=countNode(root);
-        if(root->val==sum/node){
+        pair<int,int> sum=sumSubtree(root);
+        if(root->val==sum.first/sum.second){
             average_sum+=1;
         }
         helper(root->left,average_sum);
