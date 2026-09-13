@@ -5,7 +5,7 @@ public:
         for(int val:nums){
             s.insert(val);
         }
-        for(int i=0;i<=s.size();i++){
+        for(int i=0;i<=nums.size();i++){
             if(!s.count(i)){
                 return i;
             }
