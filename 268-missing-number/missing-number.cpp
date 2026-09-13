@@ -6,7 +6,7 @@ public:
         if(nums[0]!=0){
             return 0;
         }
-        if(nums[n-1]!=n){
+        else if(nums[n-1]!=n){
             return n;
         }
         for(int i=0;i<n-1;i++){
