@@ -12,6 +12,9 @@ public:
                 if(diff<=k){
                     temp.push_back(nums[i+j]);
                 }
+                else{
+                    break;
+                }
             }
             if(temp.size()==3){
                 ans.push_back(temp);
