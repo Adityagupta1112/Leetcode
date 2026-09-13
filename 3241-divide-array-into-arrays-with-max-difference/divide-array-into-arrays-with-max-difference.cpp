@@ -7,12 +7,9 @@ public:
             int count=0;
             for(int j=0;j<3;j++){
                 int diff=nums[i+j]-nums[i];
-                if(diff<=k){
-                    count++;
+                if(diff>k){
+                    return {};
                 }
-            }
-            if(count<3){
-                return {} ;
             }
         }
         vector<vector<int>>ans;
