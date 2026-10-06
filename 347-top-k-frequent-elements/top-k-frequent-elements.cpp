@@ -6,7 +6,7 @@ public:
             mp[num]++;
         }
         priority_queue<int>pq;
-        for(auto it:mp){
+        for(auto &it:mp){
             pq.push(it.second);
         }
         vector<int>ans;
