@@ -12,7 +12,7 @@ public:
         vector<int>ans;
         for(int i=0;i<k;i++){
             int freq=pq.top();
-            for(auto it:mp){
+            for(auto &it:mp){
                 if(it.second==freq){
                     ans.push_back(it.first);
                     mp[it.first]=0;
