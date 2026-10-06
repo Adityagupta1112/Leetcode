@@ -7,14 +7,11 @@ public:
                 st.push(ch);
             }
             else{
-                if(st.empty()){
+                if(st.empty() || st.top()==')'){
                     st.push(ch);
-                }
-                else if(st.top()=='('){
-                    st.pop();
                 }
                 else{
-                    st.push(ch);
+                    st.pop();
                 }
             }
         }
