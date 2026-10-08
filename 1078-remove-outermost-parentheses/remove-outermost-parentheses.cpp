@@ -18,7 +18,7 @@ public:
             }
         }
         string ans="";
-        for( string st:str){
+        for( string &st:str){
             string strs=st.substr(1,st.size()-2);
             ans=ans+strs;
         }
