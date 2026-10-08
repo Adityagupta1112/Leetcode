@@ -4,6 +4,7 @@ public:
         vector<string>str;
         int count=0;
         string temp="";
+        string ans="";
         for(char ch:s){
             temp.push_back(ch);
             if(ch=='('){
@@ -13,15 +14,12 @@ public:
                 count--;
             }
             if(count==0){
-                str.push_back(temp);
+                string strs=temp.substr(1,temp.size()-2);
+                ans=ans+strs;
                 temp="";
             }
         }
-        string ans="";
-        for( string &st:str){
-            string strs=st.substr(1,st.size()-2);
-            ans=ans+strs;
-        }
+        
         return ans;
     }
 };
