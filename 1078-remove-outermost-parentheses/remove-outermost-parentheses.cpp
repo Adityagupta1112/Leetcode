@@ -1,7 +1,6 @@
 class Solution {
 public:
     string removeOuterParentheses(string s) {
-        vector<string>str;
         int count=0;
         string temp="";
         string ans="";
